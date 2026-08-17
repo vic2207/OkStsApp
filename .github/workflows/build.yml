@@ -14,6 +14,10 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build APK
